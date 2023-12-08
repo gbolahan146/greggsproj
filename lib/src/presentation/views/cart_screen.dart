@@ -226,7 +226,6 @@ class _CartScreenState extends State<CartScreen> {
   }
 
   String? totalPRice(List<Map<int,ProductModel>>? cart) {
-    /// MODIFY CODE ONLY BELOW THIS LINE
 
     if (cart == null || cart.isEmpty) {
       return "0"; // Return null if the requests list is null or empty
@@ -241,6 +240,5 @@ class _CartScreenState extends State<CartScreen> {
 
     return sum.toStringAsFixed(2);
 
-    /// MODIFY CODE ONLY ABOVE THIS LINE
   }
 }
