@@ -8,19 +8,10 @@ class CartBloc extends Bloc<CartEvents, CartStates> {
   CartBloc() : super(InitialCartData(products: [])) {
     on<AddProductEvent>(
       (event, emit) async {
-        // emit(DataLoadingState());
-        try {
-          // Future.delayed(Duration(seconds: 2), () {
           _cartItems.add(event.product!);
           emit(CartLoadedState(
             cartItems: _cartItems,
           ));
-
-          // });
-
-        } catch (e) {
-          emit(DataErrorState(e.toString()));
-        }
       },
     );
     on<RemoveProductEvent>((event, emit) {

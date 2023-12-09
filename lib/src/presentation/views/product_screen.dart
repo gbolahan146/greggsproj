@@ -57,14 +57,14 @@ class _ProductScreenState extends State<ProductScreen>
               child: ElevatedButton(
                   onPressed: () {
                     addToCartPopUpAnimationController.forward();
-                    Timer(const Duration(seconds: 3), () {
-                      addToCartPopUpAnimationController.reverse();
+                   BlocProvider.of<CartBloc>(context)
+                        .add(AddProductEvent(product: {id: currentProd!}));
+                    id++;  setState(() {});  Timer(const Duration(seconds: 3), () {
+                     addToCartPopUpAnimationController.reverse();
                     });
 
-                    BlocProvider.of<CartBloc>(context)
-                        .add(AddProductEvent(product: {id: currentProd!}));
-                    id++;
-                    setState(() {});
+                   
+                    
                   },
                   child: Text("Add to Cart",
                       style: TextStyle(color: Colors.white))),
